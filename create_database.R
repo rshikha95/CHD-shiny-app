@@ -1,7 +1,7 @@
-# --- create_database.R ---
+# create_database.R
 
 
-# --- Libraries Load ---
+# Libraries Load 
 
 library(DBI)        
 library(RSQLite)   
@@ -10,7 +10,7 @@ library(dplyr)
 library(stringr)  
 library(readxl)
 
-# --- Configuration (Settings) ---
+# Configuration (Settings)
 
 # 1. CSV Files List:
 
@@ -51,7 +51,7 @@ for (table_name in names(xlsx_files)) {
       col_names = TRUE
     )
     
-    if (nrow(df) == 0 && ncol(df) == 0) { # More robust check for truly empty df
+    if (nrow(df) == 0 && ncol(df) == 0) { 
       message(" -> Table ", table_name, " is empty or unreadable after skipping the first row. Skipping database write.")
       next
     }
